@@ -9,9 +9,9 @@ Whit these command you can activate the scaffold walk, that means in this mode u
 
 ### Prerequisites
 
-You need Java 8 or higher!
-You need spigot 1.7.X or higher!
-You need a Server whit min. 125MB RAM!
+* You need Java 8 or higher!
+* You need spigot 1.7.X or higher!
+* You need a Server whit min. 125MB RAM!
 
 ### Installing
 
