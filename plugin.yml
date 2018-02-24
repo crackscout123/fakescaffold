@@ -1,0 +1,11 @@
+name: FakeScaffold
+version: 0.1.2
+author: JOE_
+authors: [Copyright by gamework.ml]
+description: This is an Plugin that fakes a hack called 'ScaffoldWalk'.
+database: false
+main: ml.gamework.Main.FakeScaffold
+website: https://www.spigotmc.org/resources/fakescaffold.52982/
+
+commands:
+  scaffold:
