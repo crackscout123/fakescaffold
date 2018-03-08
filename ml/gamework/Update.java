@@ -14,6 +14,7 @@ public class Update {
         Plugin plugin = Bukkit.getPluginManager().getPlugin(name);
         String installed = plugin.getDescription().getVersion();
         String posted = "";
+        String response = null;
         try {
             HttpsURLConnection con = (HttpsURLConnection)new URL(
                     "https://www.spigotmc.org/api/general.php").openConnection();
