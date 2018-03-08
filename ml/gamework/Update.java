@@ -14,9 +14,10 @@ public class Update {
         Plugin plugin = Bukkit.getPluginManager().getPlugin(name);
         String installed = plugin.getDescription().getVersion();
         String posted = "";
+        String response = null;
         try {
-            HttpURLConnection con = (HttpURLConnection)new URL(
-                    "http://www.spigotmc.org/api/general.php").openConnection();
+            HttpsURLConnection con = (HttpsURLConnection)new URL(
+                    "https://www.spigotmc.org/api/general.php").openConnection();
             con.setDoOutput(true);
             con.setRequestMethod("POST");
             con.getOutputStream()
@@ -24,7 +25,12 @@ public class Update {
                             .getBytes("UTF-8"));
             posted = new BufferedReader(new InputStreamReader(
                     con.getInputStream())).readLine();
-        }catch (Exception localException) {}
+            response = con.getResponseMessage();
+        }catch (Exception localException) {
+            System.err.println(localException.getCause());
+            System.out.println("");
+            System.err.println(localException.fillInStackTrace());
+        }
         String[] installed_Arr = installed.split("[.]");
         String[] posted_Arr;
         if(posted != null){
@@ -49,6 +55,7 @@ public class Update {
             }
         }else{
             Bukkit.getLogger().warning("UpdateNotifyerAPI Server is not available!");
+            System.err.println(response);
             return;
         }
 
