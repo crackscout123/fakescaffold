@@ -24,5 +24,4 @@ public class ScaffoldListener implements Listener {
            }
         }
     }
-
 }
